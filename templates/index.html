@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}BusBoard{% endblock %}
+
+{% block content %}
+ <div class="heading-4">
+    Enter Your Postcode to View Bus Departures <br /><br />
+    <div class="body-content">
+         <form action="/" method="POST">
+            <input type="text" name="postcode" class="input">
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+    <br /><br />
+    <ul class="ul">
+        {% for departure in departures %}
+        <li>{{departure}}</li>
+        {% endfor %}
+    </ul>
+ </div>
+{% endblock %}
